@@ -9,9 +9,12 @@ import (
 	"strings"
 )
 
-func ShowMap () {
+func showMap (mapNumber int) {
+	clearScreen()
+
+	mapPath := fmt.Sprintf("assets/maps/map%d.txt", mapNumber)
 	// Ouvrir le fichier contenant la carte
-	file, err := os.Open("assets/maps/map1.txt")
+	file, err := os.Open(mapPath)
 	if err != nil {
 		fmt.Println("Erreur lors de l'ouverture du fichier :", err)
 		return
